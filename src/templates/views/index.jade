@@ -4,39 +4,64 @@ block title
     | Homepage - Airframe
 
 block content
-    header.g--container
-        h1 # This is Markdown.
-        p Markdown is a way of formatting text that can be easily read and understood by both humans and software.
-        h2 ## How to use markdown
-        p By typing different characters and punctuation, you can
-            | **
-            strong bold
-            | **, _
-            em  italicize
-            | _, and ~~
-            strike strike-through
-            | ~~ your text.
     .learn.g--container
-        .g--half
-            textarea(data-name="bold")
-                | **I am bold.**
-        .g--half.g--last
-            .output(data-type="output", data-name="bold")
-    .learn.g--container
-        .g--half
-            textarea(data-name="italic")
-                | _I am italic._
-        .g--half.g--last
-            .output(data-type="output", data-name="italic")
-    .learn.g--container
-        .g--half
-            textarea(data-name="strike-through")
-                | I am ~~striken.~~
-        .g--half.g--last
-            .output(data-type="output", data-name="strike-through")
-    .learn.g--container
-        .g--half
-            textarea(data-name="link")
-                | [I am a link.](http://thisismarkdown.com)
-        .g--half.g--last
-            .output(data-type="output", data-name="link")
+        header.learn--header.learn--guide
+            .g--row
+                h1 This is Markdown.
+                p.g--two-third Markdown is a way of formatting text that can be easily read and understood by both humans and software.
+            .g--row
+                h2 How to use markdown
+                p.g--two-third.
+                    By typing different characters and punctuation, you can #[strong bold],
+                    #[em italicize], #[del strike-through] your text.
+                p.g--two-third.
+                    #[strong All examples below are interactive]; edit the text on the left and see how it changes on the right!
+        .learn--example.g--row
+            .g--two-third
+                textarea(data-name="bold").
+                    **I am bold.**
+            .g--third.g--last
+                .learn--output(data-type="output", data-name="bold")
+        hr.learn--divider
+        .learn--example.g--row
+            .g--two-third
+                textarea(data-name="italic").
+                    _I am emphatic._
+            .g--third.g--last
+                .learn--output(data-type="output", data-name="italic")
+        hr.learn--divider
+        .learn--example.g--row
+            .g--two-third
+                textarea(data-name="strike-through").
+                    I am ~~striken.~~
+            .g--third.g--last
+                .learn--output(data-type="output", data-name="strike-through")
+        hr.learn--divider
+        .learn--example.g--row
+            .g--two-third
+                textarea(data-name="link").
+                    [I am a link.](http://thisismarkdown.com)
+            .g--third.g--last
+                .learn--output(data-type="output", data-name="link")
+        hr.learn--divider
+        .learn--example.g--row
+            .g--two-third
+                textarea(data-name="bulleted-list").
+                    * Bread
+                    * Milk
+                    * Eggs
+                    * Bulleted lists
+            .g--third.g--last
+                .learn--output(data-type="output", data-name="bulleted-list")
+        hr.learn--divider
+        .learn--example.g--row
+            .g--two-third
+                textarea(data-name="ordered-list").
+                    1. Type a number
+                    2. Add a dot and space
+                    3. Add some text
+                    4. Ordered lists
+            .g--third.g--last
+                .learn--output(data-type="output", data-name="ordered-list")
+        footer.learn--footer.learn--guide
+            | #[span &#9829;] Made with love by #[a(href="http://planetary.io") Planetary] using #[a(href="http://github.com/planetarycorp/airframe") Airframe].

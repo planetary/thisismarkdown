@@ -59,6 +59,10 @@ $corner-radius: 4px;
     @include span(12);
 }
 
+.g--two-third {
+    @include span(8);
+}
+
 .g--half {
     @include span(6);
 }
