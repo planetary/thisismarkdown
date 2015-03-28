@@ -33,7 +33,7 @@ block content
         .learn--example.g--row
             .g--two-third
                 textarea(data-name="strike-through").
-                    I am ~~striken.~~
+                    I am ~~stricken.~~
             .g--third.g--last
                 .learn--output(data-type="output", data-name="strike-through")
         hr.learn--divider
@@ -57,11 +57,26 @@ block content
         .learn--example.g--row
             .g--two-third
                 textarea(data-name="ordered-list").
-                    1. Type a number
-                    2. Add a dot and space
-                    3. Add some text
+                    1. Dance
+                    2. ???
+                    3. Profit!
                     4. Ordered lists
             .g--third.g--last
                 .learn--output(data-type="output", data-name="ordered-list")
+        hr.learn--divider
+        .learn--example.g--row
+            .g--two-third
+                textarea(data-name="blockquote").
+                    And she said:
+                    > Like, oh my god.
+            .g--third.g--last
+                .learn--output(data-type="output", data-name="blockquote")
+        hr.learn--divider
+        .learn--example.g--row
+            .g--two-third
+                textarea(data-name="image").
+                    ![Cat? Cat.](https://placekitten.com/g/300/200)
+            .g--third.g--last
+                .learn--output(data-type="output", data-name="image")
         footer.learn--footer.learn--guide
             | #[span &#9829;] Made with love by #[a(href="http://planetary.io") Planetary] using #[a(href="http://github.com/planetarycorp/airframe") Airframe].

@@ -12,6 +12,10 @@
         h#{$i}:hover:before {
             margin-left: -0.7em - (0.6em * $i);
             content: repeat("#", $i) + " ";
+
+            @include media("<1200px") {
+                margin-left: 0;
+            }
         }
     }
 
@@ -66,10 +70,13 @@
 }
 
 .learn--example {
+    overflow: hidden;
+
     textarea,
     .learn--output {
         font-size: 1.5rem;
         min-height: 3rem;
+        word-wrap: break-word;
     }
 
     textarea {
@@ -79,7 +86,6 @@
         min-width: 100%;
         resize: none;
         font-family: monospace;
-        word-wrap: break-word;
         overflow: hidden;
         overflow-y: hidden;
 
@@ -103,6 +109,10 @@
         &:first-child {
             margin-top: 0;
         }
+    }
+
+    img {
+        max-width: 100%;
     }
 }
 
@@ -139,5 +149,45 @@
 
     span {
         color: desaturate(lighten($red, 7%), 5%);
+    }
+}
+
+@include media("<70em") {
+    .g--container {
+        width: 95%;
+        margin: 0 auto;
+    }
+}
+
+@include media("<tablet") {
+    body,
+    html {
+        font-size: 12px;
+    }
+
+    .learn--header {
+        .g--two-third {
+            width: 100%;
+        }
+    }
+
+    .learn--footer {
+        text-align: center;
+        font-size: 1.3rem;
+
+        span {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}
+
+@include media("<=480px") {
+    .learn--example {
+        .g--two-third,
+        .g--third {
+            width: 100%;
+            float: none;
+        }
     }
 }
