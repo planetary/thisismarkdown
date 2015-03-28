@@ -1,0 +1,28 @@
+header {
+    padding: 0 0 3rem;
+}
+
+.learn {
+    textarea, .output {
+        font-size: 1.5rem;
+    }
+
+    textarea {
+        appearance: none;
+        border: none;
+        min-width: 100%;
+        resize: none;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .output {
+        padding: 0.25em .5em;
+
+        p:first-child {
+            margin-top: 0;
+        }
+    }
+}

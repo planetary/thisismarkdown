@@ -1,0 +1,9 @@
+# built project folder
+build
+
+# node libraries
+node_modules
+
+# osx noise
+.DS_Store
+profile

@@ -1,0 +1,42 @@
+extends /layouts/default
+
+block title
+    | Homepage - Airframe
+
+block content
+    header.g--container
+        h1 # This is Markdown.
+        p Markdown is a way of formatting text that can be easily read and understood by both humans and software.
+        h2 ## How to use markdown
+        p By typing different characters and punctuation, you can
+            | **
+            strong bold
+            | **, _
+            em  italicize
+            | _, and ~~
+            strike strike-through
+            | ~~ your text.
+    .learn.g--container
+        .g--half
+            textarea(data-name="bold")
+                | **I am bold.**
+        .g--half.g--last
+            .output(data-type="output", data-name="bold")
+    .learn.g--container
+        .g--half
+            textarea(data-name="italic")
+                | _I am italic._
+        .g--half.g--last
+            .output(data-type="output", data-name="italic")
+    .learn.g--container
+        .g--half
+            textarea(data-name="strike-through")
+                | I am ~~striken.~~
+        .g--half.g--last
+            .output(data-type="output", data-name="strike-through")
+    .learn.g--container
+        .g--half
+            textarea(data-name="link")
+                | [I am a link.](http://thisismarkdown.com)
+        .g--half.g--last
+            .output(data-type="output", data-name="link")
