@@ -10,7 +10,9 @@ html
         title
             block title
                 | This is Markdown.
-        link(rel="stylesheet", href="css/main.css")
+        link(rel="stylesheet", href="/css/main.css")
+        link(rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32")
+        link(rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16")
         block head
           //- Additional head content (scripts, styles).
 
@@ -26,6 +28,6 @@ body
         ga('create', 'UA-44627894-4', 'auto');
         ga('send', 'pageview');
     script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
-    script(src="js/bundle.js")
+    script(src="/js/bundle.js")
     block scripts
       //- Additional scripts.

@@ -3,6 +3,7 @@ module.exports = function( gulp, plugins ) {
         'bundle:dev',
         'templates',
         'styles',
-        'images'
+        'images',
+        'favicon'
     ] );
 };
