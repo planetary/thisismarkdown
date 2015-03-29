@@ -4,9 +4,9 @@ $base-font-size: 16px;
 $base-line-height: 1.6;
 
 // typefaces
-$sans:        Helvetica, sans-serif;
+$sans:        "canada-type-gibson", Helvetica, sans-serif;
 $serif:       Georgia, serif;
-$mono:        Courier, monospace;
+$mono:        "anonymous-pro", Menlo, Courier, monospace;
 
 .type--sans {
     font-family: $sans;

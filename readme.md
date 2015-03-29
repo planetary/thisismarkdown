@@ -1,5 +1,5 @@
-# Airframe
-## A Project Starter Kit, made with love by [Planetary](http://planetary.io)
+# This is Markdown.
+## A reference made with love by [Planetary](http://planetary.io) using [Airframe](http://github.com/planetarycorp/airframe).
 
 **Dependencies:**
 - [NodeJS](http://nodejs.org/)
