@@ -15,7 +15,7 @@ block content
                 h2 How to use markdown
                 p.g--two-third.
                     By typing different characters and punctuation, you can #[strong bold],
-                    #[em italicize], #[del strike-through] your text.
+                    #[em italicize], #[a(href="http://planetary.io") link] your text.
                 p.g--two-third.
                     #[strong All examples below are interactive]; edit the text on the left and see how it changes on the right!
         .learn--example.g--row
@@ -34,17 +34,21 @@ block content
         hr.learn--divider
         .learn--example.g--row
             .g--two-third
-                textarea(data-name="strike-through").
-                    I am ~~stricken.~~
-            .g--third.g--last
-                .learn--output(data-type="output", data-name="strike-through")
-        hr.learn--divider
-        .learn--example.g--row
-            .g--two-third
                 textarea(data-name="link").
                     [I am a link.](http://thisismarkdown.com)
             .g--third.g--last
                 .learn--output(data-type="output", data-name="link")
+        hr.learn--divider
+        .learn--example.g--row
+            .g--two-third
+                textarea(data-name="code").
+                    Code blocks are:
+
+                        (function() {
+                          return 'so cool.';
+                        })()
+            .g--third.g--last
+                .learn--output(data-type="output", data-name="code")
         hr.learn--divider
         .learn--example.g--row
             .g--two-third
