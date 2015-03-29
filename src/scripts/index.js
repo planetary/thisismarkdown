@@ -11,7 +11,6 @@ var Parser = function( input ) {
     };
 
     var resize = function() {
-        console.log( input.scrollHeight, heightOffset );
         input.style.height = 'auto';
 
         var toHeight = input.scrollHeight - heightOffset;
