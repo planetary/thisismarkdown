@@ -1,88 +1,100 @@
 extends /layouts/default
 
 block head
-    script(src="//use.typekit.net/xdy2tyi.js")
+    script(src="//ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js")
     script.
-        try{Typekit.load();}catch(e){}
+        WebFont.load({
+            google: {
+                families: ['Anonymous Pro', 'Montserrat:n4,i4,n7,i7', 'Merriweather:n4,i4,n7,i7']
+            }
+        });
 
 block content
     .learn.g--container
         header.learn--header.learn--guide
             .g--row
                 h1 This is Markdown.
-                p.g--two-third Markdown is a way of formatting text that can be easily read and understood by both humans and software.
+                p Markdown is a way of formatting text that can be easily read and understood by both humans and software.
             .g--row
                 h2 How to use markdown
-                p.g--two-third.
+                p.
                     By typing different characters and punctuation, you can #[strong bold],
                     #[em italicize], and #[a(href="http://planetary.io") link] your text.
-                p.g--two-third.
+                p.
                     #[strong All examples below are interactive]; edit the text on the left and see how it changes on the right!
         .learn--example.g--row
-            .g--two-third
-                textarea(data-name="bold").
-                    **I am bold.**
-            .g--third.g--last
+            .g--half
+                .learn--input
+                    textarea(data-name="bold").
+                        **I am bold.**
+            .g--half.g--last
                 .learn--output(data-type="output", data-name="bold")
         hr.learn--divider
         .learn--example.g--row
-            .g--two-third
-                textarea(data-name="italic").
-                    _I am emphatic._
-            .g--third.g--last
+            .g--half
+                .learn--input
+                    textarea(data-name="italic").
+                        _I am emphatic._
+            .g--half.g--last
                 .learn--output(data-type="output", data-name="italic")
         hr.learn--divider
         .learn--example.g--row
-            .g--two-third
-                textarea(data-name="link").
-                    [I am a link.](http://thisismarkdown.com)
-            .g--third.g--last
+            .g--half
+                .learn--input
+                    textarea(data-name="link").
+                        [I am a link.](http://thisismarkdown.com)
+            .g--half.g--last
                 .learn--output(data-type="output", data-name="link")
         hr.learn--divider
         .learn--example.g--row
-            .g--two-third
-                textarea(data-name="code").
-                    Code blocks are:
+            .g--half
+                .learn--input
+                    textarea(data-name="code").
+                        Code blocks are:
 
-                        (function() {
-                          return 'so cool.';
-                        })()
-            .g--third.g--last
+                            (function() {
+                              return 'so cool.';
+                            })()
+            .g--half.g--last
                 .learn--output(data-type="output", data-name="code")
         hr.learn--divider
         .learn--example.g--row
-            .g--two-third
-                textarea(data-name="bulleted-list").
-                    * Bread
-                    * Milk
-                    * Eggs
-                    * Bulleted lists
-            .g--third.g--last
+            .g--half
+                .learn--input
+                    textarea(data-name="bulleted-list").
+                        * Bread
+                        * Milk
+                        * Eggs
+                        * Bulleted lists
+            .g--half.g--last
                 .learn--output(data-type="output", data-name="bulleted-list")
         hr.learn--divider
         .learn--example.g--row
-            .g--two-third
-                textarea(data-name="ordered-list").
-                    1. Dance
-                    2. ???
-                    3. Profit!
-                    4. Ordered lists
-            .g--third.g--last
+            .g--half
+                .learn--input
+                    textarea(data-name="ordered-list").
+                        1. Dance
+                        2. ???
+                        3. Profit!
+                        4. Ordered lists
+            .g--half.g--last
                 .learn--output(data-type="output", data-name="ordered-list")
         hr.learn--divider
         .learn--example.g--row
-            .g--two-third
-                textarea(data-name="blockquote").
-                    And she said:
-                    > Like, oh my god.
-            .g--third.g--last
+            .g--half
+                .learn--input
+                    textarea(data-name="blockquote").
+                        And she said:
+                        > Like, oh my god.
+            .g--half.g--last
                 .learn--output(data-type="output", data-name="blockquote")
         hr.learn--divider
         .learn--example.g--row
-            .g--two-third
-                textarea(data-name="image").
-                    ![Cat? Cat.](https://placekitten.com/g/300/200)
-            .g--third.g--last
+            .g--half
+                .learn--input
+                    textarea(data-name="image").
+                        ![Cat? Cat.](https://placekitten.com/g/300/200)
+            .g--half.g--last
                 .learn--output(data-type="output", data-name="image")
         footer.learn--footer.learn--guide
             | #[span.heart &#9829;] A reference made with love by #[a(href="http://planetary.io") Planetary] using #[a(href="http://github.com/planetarycorp/airframe") Airframe].

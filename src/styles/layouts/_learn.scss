@@ -67,7 +67,7 @@
 }
 
 .learn--header {
-    padding: 0 0 3rem;
+    padding: 2rem 0 3rem;
     cursor: default;
 
     p {
@@ -86,9 +86,12 @@
     }
 
     textarea {
-        padding: 0.25rem 0.5rem;
+        background: $off-white;
+        word-wrap: break-word;
+        border: 2px solid $off-white;
+        padding: 1rem 1.5rem;
         appearance: none;
-        border: 0;
+        border-radius: 3px;
         min-width: 100%;
         resize: none;
         font-family: $mono;
@@ -97,12 +100,18 @@
 
         &:focus {
             outline: none;
+            border: 2px solid $gray-lighter;
         }
     }
 }
 
+.learn--input, .learn--output {
+
+
+}
+
 .learn--output {
-    padding: 0.25rem 0.5rem;
+    padding: 1rem 0.5rem;
 
     p:first-child {
         margin-top: 0;
@@ -197,7 +206,7 @@
     }
 
     .learn--header {
-        .g--two-third {
+        .g--half {
             width: 100%;
         }
     }
@@ -221,8 +230,7 @@
 
 @include media("<=480px") {
     .learn--example {
-        .g--two-third,
-        .g--third {
+        .g--half {
             width: 100%;
             float: none;
         }

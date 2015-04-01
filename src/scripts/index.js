@@ -4,7 +4,7 @@ var Parser = function( input ) {
     var name = input.dataset.name,
         output = document.querySelector( '[data-type="output"][data-name="' + name + '"]' ),
         style = window.getComputedStyle( input, null ),
-        heightOffset = parseFloat( style.paddingTop ) + parseFloat( style.paddingBottom );
+        heightOffset = parseFloat( style.paddingTop );
 
     var markdownify = function() {
         output.innerHTML = marked( input.value );
@@ -13,7 +13,7 @@ var Parser = function( input ) {
     var resize = function() {
         input.style.height = 'auto';
 
-        var toHeight = input.scrollHeight - heightOffset;
+        var toHeight = input.scrollHeight + heightOffset;
         input.style.height = toHeight + 'px';
     };
 
