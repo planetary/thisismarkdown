@@ -13,7 +13,7 @@ var Parser = function( input ) {
     var resize = function() {
         input.style.height = 'auto';
 
-        var toHeight = input.scrollHeight - heightOffset;
+        var toHeight = document.getElementById('output').scrollHeight + heightOffset;
         input.style.height = toHeight + 'px';
     };
 
@@ -34,8 +34,30 @@ var Parser = function( input ) {
     this.init();
 };
 
+function setSelectionRange(input, selectionStart, selectionEnd) {
+    if (input.setSelectionRange) {
+      input.focus();
+      input.setSelectionRange(selectionStart, selectionEnd);
+    }
+    else if (input.createTextRange) {
+        var range = input.createTextRange();
+        range.collapse(true);
+        range.moveEnd('character', selectionEnd);
+        range.moveStart('character', selectionStart);
+        range.select();
+    }
+}
+
+function setCaretToPos (input, pos) {
+    console.log('moving caret');
+    setSelectionRange(input, pos, pos);
+}
+
 document.addEventListener( 'DOMContentLoaded', function( event ) {
-    Array.prototype.forEach.call( document.querySelectorAll( 'textarea' ), Parser );
+    var input = document.getElementById('input');
+    Parser(input);
+    setCaretToPos(input, 19);
+
 } );
 
 module.exports = {};

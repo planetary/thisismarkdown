@@ -1,95 +1,54 @@
 extends /layouts/default
 
 block head
-    script(src="//use.typekit.net/xdy2tyi.js")
+    script(src="//ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js")
     script.
-        try{Typekit.load();}catch(e){}
+        WebFont.load({
+            google: {
+              families: ['Cousine', 'Lora']
+            }
+        });
 
 block content
-    .learn.g--container
-        header.learn--header.learn--guide
-            .g--row
-                h1 This is Markdown.
-                p.g--two-third Markdown is a way of formatting text that can be easily read and understood by both humans and software.
-            .g--row
-                h2 How to use markdown
-                p.g--two-third.
-                    By typing different characters and punctuation, you can #[strong bold],
-                    #[em italicize], and #[a(href="http://planetary.io") link] your text.
-                p.g--two-third.
-                    #[strong All examples below are interactive]; edit the text on the left and see how it changes on the right!
-        .learn--example.g--row
-            .g--two-third
-                textarea(data-name="bold").
-                    **I am bold.**
-            .g--third.g--last
-                .learn--output(data-type="output", data-name="bold")
-        hr.learn--divider
-        .learn--example.g--row
-            .g--two-third
-                textarea(data-name="italic").
-                    _I am emphatic._
-            .g--third.g--last
-                .learn--output(data-type="output", data-name="italic")
-        hr.learn--divider
-        .learn--example.g--row
-            .g--two-third
-                textarea(data-name="link").
-                    [I am a link.](http://thisismarkdown.com)
-            .g--third.g--last
-                .learn--output(data-type="output", data-name="link")
-        hr.learn--divider
-        .learn--example.g--row
-            .g--two-third
-                textarea(data-name="code").
-                    Code blocks are:
+    .learn--body
+        span.learn--helper.learn--helper-input &darr; Edit this text ...
+        span.learn--helper.learn--helper-output &rarr; ... And see the processed output here!
+        textarea.input(data-name="document-content")#input.
+            # This is Markdown.
 
-                        (function() {
-                          return 'so cool.';
-                        })()
-            .g--third.g--last
-                .learn--output(data-type="output", data-name="code")
-        hr.learn--divider
-        .learn--example.g--row
-            .g--two-third
-                textarea(data-name="bulleted-list").
-                    * Bread
-                    * Milk
-                    * Eggs
-                    * Bulleted lists
-            .g--third.g--last
-                .learn--output(data-type="output", data-name="bulleted-list")
-        hr.learn--divider
-        .learn--example.g--row
-            .g--two-third
-                textarea(data-name="ordered-list").
-                    1. Dance
-                    2. ???
-                    3. Profit!
-                    4. Ordered lists
-            .g--third.g--last
-                .learn--output(data-type="output", data-name="ordered-list")
-        hr.learn--divider
-        .learn--example.g--row
-            .g--two-third
-                textarea(data-name="blockquote").
-                    And she said:
-                    > Like, oh my god.
-            .g--third.g--last
-                .learn--output(data-type="output", data-name="blockquote")
-        hr.learn--divider
-        .learn--example.g--row
-            .g--two-third
-                textarea(data-name="image").
-                    ![Cat? Cat.](https://placekitten.com/g/300/200)
-            .g--third.g--last
-                .learn--output(data-type="output", data-name="image")
-        footer.learn--footer.learn--guide
-            | #[span.heart &#9829;] A reference made with love by #[a(href="http://planetary.io") Planetary] using #[a(href="http://github.com/planetarycorp/airframe") Airframe].
-            span.fork
-                | Fork me on&nbsp;
-                a(href="http://github.com/planetarycorp/thisismarkdown")
-                    span GitHub
-                    | &nbsp;
-                    svg(xmlns='http://www.w3.org/2000/svg', width='16', version='1.1', x='0', y='0', viewbox='0 0 10.3 10', enable-background='new 0 0 10.3 10', xml:space='preserve')
-                      path(fill-rule='evenodd', clip-rule='evenodd', fill='#191717', d='M5.1 0C2.3 0 0 2.3 0 5.1 0 7.4 1.5 9.3 3.5 10c0.3 0 0.3-0.1 0.3-0.2 0-0.1 0-0.4 0-0.9C2.4 9.2 2.1 8.2 2.1 8.2 1.9 7.6 1.6 7.4 1.6 7.4c-0.5-0.3 0-0.3 0-0.3 0.5 0 0.8 0.5 0.8 0.5 0.5 0.8 1.2 0.6 1.5 0.4 0-0.3 0.2-0.6 0.3-0.7C3.1 7.3 1.9 6.8 1.9 4.9c0-0.6 0.2-1 0.5-1.4C2.3 3.4 2.2 2.8 2.4 2.1c0 0 0.4-0.1 1.4 0.5 0.4-0.1 0.8-0.2 1.3-0.2 0.4 0 0.9 0.1 1.3 0.2 1-0.7 1.4-0.5 1.4-0.5 0.3 0.7 0.1 1.2 0.1 1.4 0.3 0.4 0.5 0.8 0.5 1.4 0 2-1.2 2.4-2.3 2.5 0.2 0.2 0.3 0.5 0.3 0.9 0 0.7 0 1.2 0 1.4 0 0.1 0.1 0.3 0.4 0.2 2-0.7 3.5-2.6 3.5-4.9C10.2 2.3 8 0 5.1 0z')
+            Markdown is a way of formatting text that can be easily read and understood by both humans and software.
+
+            ## How to use markdown
+
+            By typing different characters and punctuation, you can **bold**, _italicize_, and [link](http://thisismarkdown.com) your text.
+
+            ### More examples
+
+            * Create bulleted lists
+            * Eggs
+            * Milk
+            * Bread
+
+            > "Make quotes look quotable."
+
+            1. Create ordered lists
+            2. Dance
+            3. ???
+            4. Profit!
+
+            ![Add pictures to your text.](https://placekitten.com/g/400/200)
+
+                (function() {
+                    return 'format code blocks.';
+                })()
+        .output(data-type="output", data-name="document-content")#output
+
+    footer.learn--footer.learn--guide
+        | #[span.heart &#9829;] A reference made with love by #[a(href="http://planetary.io") Planetary] using #[a(href="http://github.com/planetarycorp/airframe") Airframe].
+        span.fork
+            | Fork me on&nbsp;
+            a(href="http://github.com/planetarycorp/thisismarkdown")
+                span GitHub
+                | &nbsp;
+                svg(xmlns='http://www.w3.org/2000/svg', width='16', version='1.1', x='0', y='0', viewbox='0 0 10.3 10', enable-background='new 0 0 10.3 10', xml:space='preserve')
+                  path(fill-rule='evenodd', clip-rule='evenodd', fill='#191717', d='M5.1 0C2.3 0 0 2.3 0 5.1 0 7.4 1.5 9.3 3.5 10c0.3 0 0.3-0.1 0.3-0.2 0-0.1 0-0.4 0-0.9C2.4 9.2 2.1 8.2 2.1 8.2 1.9 7.6 1.6 7.4 1.6 7.4c-0.5-0.3 0-0.3 0-0.3 0.5 0 0.8 0.5 0.8 0.5 0.5 0.8 1.2 0.6 1.5 0.4 0-0.3 0.2-0.6 0.3-0.7C3.1 7.3 1.9 6.8 1.9 4.9c0-0.6 0.2-1 0.5-1.4C2.3 3.4 2.2 2.8 2.4 2.1c0 0 0.4-0.1 1.4 0.5 0.4-0.1 0.8-0.2 1.3-0.2 0.4 0 0.9 0.1 1.3 0.2 1-0.7 1.4-0.5 1.4-0.5 0.3 0.7 0.1 1.2 0.1 1.4 0.3 0.4 0.5 0.8 0.5 1.4 0 2-1.2 2.4-2.3 2.5 0.2 0.2 0.3 0.5 0.3 0.9 0 0.7 0 1.2 0 1.4 0 0.1 0.1 0.3 0.4 0.2 2-0.7 3.5-2.6 3.5-4.9C10.2 2.3 8 0 5.1 0z')

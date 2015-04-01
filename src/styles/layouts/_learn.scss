@@ -1,230 +1,68 @@
-@function repeat($str, $n) {
-    $out: "";
-    @for $i from 1 through $n {
-        $out: $out + $str;
-    }
-    @return $out;
-}
+.learn--body {
+    background-image: linear-gradient(to right, $black, $black 50%, $off-white 50%, $off-white);
 
-.learn--guide {
-    @for $i from 1 through 6 {
-        h#{$i}:hover { font-family: $mono; }
-        h#{$i}:hover:before {
-            margin-left: -0.55em - (0.5em * $i);
-            content: repeat("#", $i) + " ";
-
-            @include media("<1200px") {
-                margin-left: 0;
-            }
-        }
-    }
-
-    strong:hover,
-    em:hover,
-    del:hover {
-        font-family: $mono;
-        font-style: normal;
-        text-decoration: none;
-    }
-
-    strong:hover {
-        &:before,
-        &:after {
-            content: "**";
-        }
-    }
-
-    em:hover {
-        &:before,
-        &:after {
-            content: "_";
-        }
-    }
-
-    del:hover {
-        &:before,
-        &:after {
-            content: "~~";
-        }
-    }
-
-    // This, unfortunately, doesn't work as well on small devices :(
-    @include media(">=tablet") {
-        a:hover {
-            font-family: $mono;
-            font-style: normal;
-            text-decoration: none;
-
-            &:before {
-                content: "[";
-            }
-
-            &:after {
-                content: "](" attr(href) ")";
-            }
-        }
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
     }
 }
 
-.learn--header {
-    padding: 0 0 3rem;
-    cursor: default;
+.learn--helper {
+    position: absolute;
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    border-radius: 3px;
+    font-family: $mono;
+    font-size: $scale-small;
+    background: $yellow;
+    color: $black;
+}
 
-    p {
-        font-size: 1.5rem;
+.learn--helper-input {
+    left: 2rem;
+    top: 1rem;
+}
+
+.learn--helper-output {
+    left: calc(50% + 2rem);
+    top: 1rem;
+}
+
+.input, .output {
+    width: 50%;
+    float: left;
+    padding: 5rem 3rem 2rem;
+}
+
+.input {
+    background: $black;
+    color: $white;
+    font-family: $mono;
+    border: 0;
+    overflow-y: visible;
+    resize: none;
+
+    &:focus {
+        outline: 0;
     }
 }
 
-.learn--example {
-    overflow: hidden;
-
-    textarea,
-    .learn--output {
-        font-size: 1.5rem;
-        min-height: 3rem;
-        word-wrap: break-word;
-    }
-
-    textarea {
-        padding: 0.25rem 0.5rem;
-        appearance: none;
-        border: 0;
-        min-width: 100%;
-        resize: none;
-        font-family: $mono;
-        overflow: hidden;
-        overflow-y: hidden;
-
-        &:focus {
-            outline: none;
-        }
-    }
-}
-
-.learn--output {
-    padding: 0.25rem 0.5rem;
-
-    p:first-child {
-        margin-top: 0;
-    }
-
-    > ul,
-    > ol {
-        padding-left: 0;
-
-        &:first-child {
-            margin-top: 0;
-        }
-    }
-
-    img {
-        max-width: 100%;
-    }
-}
-
-.learn--divider {
-    border-width: 1px 0 0;
-    border-style: solid;
-    border-color: $gray-lighter;
-    margin: 0;
-    padding: 0 0 2rem;
-    width: 100%;
-    overflow: hidden;
-
-    &:hover {
-        border-color: transparent;
-        line-height: 2.5;
-        margin-top: -1.4rem;
-        padding: 0 0 3.4rem;
-
-        &:before {
-            display: block;
-            content: repeat("*", 150);
-            overflow: hidden;
-            word-wrap: break-word;
-            font-family: $mono;
-            width: 100%;
-            height: 2rem;
-        }
-    }
+.output {
+    background: $off-white;
+    color: $black;
+    font-family: $serif;
 }
 
 .learn--footer {
-    padding: 0 0.5rem;
-    margin: 5rem 0;
-
-    .heart {
-        color: desaturate(lighten($red, 7%), 5%);
-    }
-
-    .fork {
-        float: right;
-
-        a {
-            text-decoration: none;
-        }
-
-        span {
-            text-decoration: underline;
-        }
-
-        svg {
-            position: relative;
-            top: 2px;
-        }
-    }
+    padding: 1rem;
 }
 
-@include media("<=70em") {
-    .g--container {
-        width: 95%;
-        margin: 0 auto;
-    }
-
-    .learn--footer {
-        .fork {
-            margin-top: 1rem;
-            display: block;
-            float: none;
-        }
-    }
+.heart {
+    font-family: $sans;
+    color: $red;
 }
 
-@include media("<tablet") {
-    body,
-    html {
-        font-size: 12px;
-    }
-
-    .learn--header {
-        .g--two-third {
-            width: 100%;
-        }
-    }
-
-    .learn--footer {
-        text-align: center;
-        font-size: 1.3rem;
-
-        .heart {
-            display: block;
-            float: none;
-        }
-
-        .heart,
-        .fork {
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }
-}
-
-@include media("<=480px") {
-    .learn--example {
-        .g--two-third,
-        .g--third {
-            width: 100%;
-            float: none;
-        }
-    }
+.fork {
+    float: right;
 }
